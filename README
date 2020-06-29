@@ -1,0 +1,7 @@
+a hugo theme
+
+Installation
+
+inside the folder of your Hugo site run:
+
+$ git submodule add https://github.com/1nfsr/Knowhere.git themes/Knowhere
