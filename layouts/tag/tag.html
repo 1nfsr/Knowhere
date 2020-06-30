@@ -6,7 +6,7 @@
     <p>Tag: {{ .Title | lower }}</p>
     <ul>
         {{ range .Pages.ByDate.Reverse }}
-            <li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a></li>
+            <li><a href='{{ .Permalink}}'> {{ .LinkTitle }} </a></li>
         {{ end }}
     </ul>
     </div>
