@@ -8,16 +8,16 @@
     {{ .Title }}
   {{ end }}
     - 
-  {{ if isset .Site.Params "Description" }}
-    {{ .Site.Params.Description }}
+  {{ if isset .Site.Params "description" }}
+    {{ .Site.Params.description }}
   {{ else }}
     {{ .Site.Title }}
   {{ end }}
   </title>
-  <meta name="description" content="{{ .Site.Params.Description }}">
+  <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="stylesheet" type="text/css" href='{{ .Site.BaseURL }}/css/combined-min.css'>
 </head>
