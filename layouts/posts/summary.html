@@ -6,7 +6,7 @@
     {{ if isset .Params "author" }}
   <p class="post-meta">
     {{ "posted by" }} 
-    <a href='#'>{{ .Params.author }}</a>
+    <a href='{{ .Site.BaseURL }}/about.html'>{{ .Params.author }}</a>
     {{ end }}
     {{ "on " }}{{.Date.Format "January 2, 2006"}}
   </p>
