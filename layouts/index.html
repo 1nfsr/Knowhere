@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html>
 {{ partial "head.html" . }}
+<body>
 {{ partial "header.html" . }}
   {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
   {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
@@ -6,3 +9,5 @@
     <h2><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
   {{ end }}
 {{ partial "footer.html" . }}
+</body>
+</html>
