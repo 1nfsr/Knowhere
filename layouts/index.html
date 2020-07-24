@@ -7,6 +7,11 @@
   {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
   {{ range $paginator.Pages }}
     <h2><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+    {{ .Summary | plainify | safeHTML }}
+
+    {{ if .Truncated }}
+    <a href="{{ .Permalink }}">Read more</a>
+    {{ end }}
   {{ end }}
 {{ partial "footer.html" . }}
 </body>
