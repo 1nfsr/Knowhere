@@ -1,5 +1,13 @@
-<header>
-    <div>
-        <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+<div class="header">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6 col-lg-8 col-xl-9">
+            <h2 class="site-name mb-0 text-uppercase"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+            {{ $slogan := .Site.Params.slogan }}
+            {{ if and (isset .Site.Params "slogan") (ne $slogan "") }}
+            <div class="tagline mb-3 mb-md-0">{{ $slogan | htmlUnescape }}</div>
+            {{ end }}
+        </div>
     </div>
-</header>
+</div>
+
+<hr />
