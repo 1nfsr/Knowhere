@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>404 Page</title>
+  <title>404</title>
 
   
-      <link rel="stylesheet" href="css/404.css">
+      <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/404.css">
 
   
 </head>
@@ -29,7 +29,7 @@
   <div class="buttons-con">
     <div class="action-link-wrap">
       <a onclick="history.back(-1)" class="link-button link-back-button">返回上一页</a>
-      <a href="https://infsr.me" class="link-button">返回首页</a>
+      <a href="{{ .Site.BaseURL }}" class="link-button">返回首页</a>
     </div>
   </div>
 </div>
