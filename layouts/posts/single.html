@@ -1,0 +1,12 @@
+{{ partial "head.html" . }}
+<body ondragstart="return false;">
+{{ partial "header.html" . }}
+<div class="page page-index">
+  <div class="list-post">
+  <h1>{{ .Title }}</h1>
+  <br />
+  {{ .Content }}
+
+  </div>
+</div>
+{{ partial "footer.html" . }}
