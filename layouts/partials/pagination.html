@@ -1,0 +1,20 @@
+<div class="pagination clearfix mb1 mt4">
+  <div class="left">
+  {{ if .Paginator.HasPrev }}
+  {{ if eq .Paginator.PageNumber 2 }}
+  <a class="pagination-item" href='{{ .Site.BaseURL }}'>{{ "newer" }}</a>
+  {{ else }}
+  <a class="pagination-item" href='{{ .Paginator.Prev.URL }}'>{{ "newer" }}</a>
+  {{ end }}
+  {{ else }}
+  <span class="pagination-item disabled">{{ "newer" }}</span>
+  {{ end }}
+  </div>
+  <div class="right">
+  {{ if .Paginator.HasNext }}
+  <a class="pagination-item" href='{{ .Paginator.Next.URL }}'>{{ "older" }}</a>
+  {{ else }}
+  <span class="pagination-item disabled">{{ "older" }}</span>
+  {{ end }}
+  </div>
+</div>
