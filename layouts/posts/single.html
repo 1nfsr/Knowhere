@@ -1,12 +1,15 @@
 {{ partial "head.html" . }}
-<body ondragstart="return false;">
-{{ partial "header.html" . }}
-<div class="page page-index">
-  <div class="list-post">
-  <h1>{{ .Title }}</h1>
-  <br />
-  {{ .Content }}
 
+<body ondragstart="return false;">
+
+{{ partial "header.html" . }}
+
+<div class="page page-post">
+  <h1 class="title" id="{{ .Title }}">{{ .Title }}</h1> 
+  <div class="subtitle">{{ .Params.author }} 于 {{.Date.Format "2006-01-02"}} 发布</div>
+  <div class="post">
+    {{ .Content }}
   </div>
 </div>
+
 {{ partial "footer.html" . }}
