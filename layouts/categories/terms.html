@@ -7,7 +7,8 @@
 <div class="page page-index">
   <div class="list-post">
 
-<h1>类别标签有{{ len .Data.Terms }}个</h1>
+<h3 class="title">归类目录有{{ len .Data.Terms }}个</h3>
+
 {{ $data := .Data }}
 {{ range .Data.Terms.ByCount }}
 {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}

@@ -7,12 +7,13 @@
 <div class="page page-index">
   <div class="list-post">
 
-<h1>分类标签有{{ len .Data.Terms }}个</h1>
+<h3 class="title">分类标签有{{ len .Data.Terms }}个</h3>
+
 {{ $data := .Data }}
 {{ range .Data.Terms.ByCount }}
 {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
 <h2>
-    <a href="{{ $termLink }}">{{ .Term }}</a>
+    <a href="#{{ .Term }}">{{ .Term }}</a>
     有{{ .Count }}篇
 </h2>
 <ul>
@@ -20,7 +21,7 @@
     <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
     {{ if gt (len .Pages) 5 }}
-    <li><a href="{{ $termLink }}">……</a></li>
+    <li><a href="#{{ .Term }}">……</a></li>
     {{ end }}
 </ul>
 {{ end }}
