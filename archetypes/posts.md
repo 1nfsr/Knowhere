@@ -1,7 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-timezone: UTC+8
+date: {{ .Date }}T00:00:00+08:00
 Description: ""
 Tags: []
 Categories: []
