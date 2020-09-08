@@ -2,13 +2,30 @@
 <html lang="zh-cn" >
 
 <head>
-  <meta charset="UTF-8">
-  <title>404</title>
-
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="author" content="{{ .Site.Params.author }}" />
+    <meta name="keywords" content="{{ .Site.Params.keywords }}" />
   
-      <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/404.css">
+    {{ define "title" }}
+    {{ $title := .Title }}
+    {{ if and (ne $title "") (ne $title .Site.Title) }}
+    <title>{{ $title }} &ndash; {{ .Site.Title | htmlUnescape }}</title>
+    {{ else }}
+    {{ $slogan := .Site.Params.authors.slogan }}
+    <title>{{ .Site.Title | htmlUnescape }}{{ if and (isset .Site.Params.authors "slogan") (ne $slogan "") }} &ndash; {{ $slogan | htmlUnescape }}{{ end }}</title>
+    {{ end }}  
+    {{ end }}
+    {{- block "title" . }}{{- end }}
 
-  
+    <link rel="icon" href="{{ .Site.BaseURL }}/icon/favicon.ico" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/404.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
 </head>
 
 <body>
