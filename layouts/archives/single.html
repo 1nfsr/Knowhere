@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+    {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
+    <h2>{{ .Key }}</h2>
+    <ul class="archives-li">
+    {{ range .Pages }}
+      <li>
+        <span>{{ .Date.Format "2006-01-02" }}  <a href="{{ .Permalink }}">{{ .Title }}</a></span>
+      </li>
+    {{ end }}
+    </ul>
+    {{ end }}
+
+{{ end }}

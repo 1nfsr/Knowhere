@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article>
+
+    <h1>{{ .Title }}</h1>
+
+    {{ if eq .Section "posts" }}
+        <span class="date">Posted by <a href="{{ .Site.Params.author.url }}">{{ .Site.Params.author.name }}</a> @ {{ .Date.Format "2006-01-06" }}</span>
+    {{ end }}
+    <br />
+    <br />
+    <div>
+      {{ .Content }}
+    </div>
+    
+</article>
+{{ end }}

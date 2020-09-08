@@ -1,29 +1,6 @@
-{{ partial "head.html" . }}
-<body ondragstart="return false;">
-{{ partial "header.html" . }}
-<div class="page page-index">
-  <div class="list-post">
-       
-      {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-      {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-      {{ range $paginator.Pages }}
-      
-      <ul>
-        <li>
-          <span class="date">{{.Date.Format "2006/01/02"}}</span>
-          <div class="title">
-            <a class="hover-underline" href="{{ .RelPermalink }}">{{.Title}}</a>
-          </div>
-          <!--
-          <div class="categories">
-            <a href="#" class="hover-underline">#</a>
-          </div>
-          -->
-        </li>
-      </ul>
-  
-  {{ end }}
-
-  </div>
-</div>
-{{ partial "footer.html" . }}
+{{ define "main" }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+    {{ end }}
+{{ end }}
