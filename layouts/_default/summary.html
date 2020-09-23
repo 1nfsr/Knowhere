@@ -1,9 +1,16 @@
-<article>
-	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-	<span class="date">{{ .Date.Format (default "1月 06, 2006" .Site.Params.dateFmt) }}</span>
-	<div>
-        <br />
-		{{ .Summary }}
-	</div>
+<article class="post-preview">
+  
+  <h2 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h2>
+  
+  <div class="postmeta">
+    {{ partial "postmeta.html" . }}
+  </div>
+  <div class="post-entry">
+    {{ if .Truncated }}
+      <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="post-read-more">{{ "read more" }}</a>
+    {{ end }}
+  </div>
 </article>
-<br />

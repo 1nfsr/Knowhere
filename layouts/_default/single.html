@@ -1,16 +1,26 @@
 {{ define "main" }}
-<article>
-
-    <h1>{{ .Title }}</h1>
-
-    {{ if eq .Section "posts" }}
+<div class="container" role="main">
+    <article class="article" class="blog-post">
+      <h1>{{ .Title }}</h1>
+      {{ if eq .Section "posts" }}
         <span class="date">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }}</span>
-    {{ end }}
-    <br />
-    <br />
-    <div>
-      {{ .Content }}
-    </div>
-    
-</article>
+      {{ end }}
+
+      <div class="content">
+        {{ .Content }}
+      </div>
+
+      {{ if .Params.tags }}
+        <div class="blog-tags">
+          {{ range .Params.tags }}
+            <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+          {{ end }}
+        </div>
+      {{ end }}
+
+      <div class="comment">
+        <h3>Comments</h3>
+      </div>
+    </article>
+</div>
 {{ end }}

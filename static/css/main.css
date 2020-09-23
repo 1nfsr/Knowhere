@@ -1,156 +1,43 @@
-/*
- * Global resets
- *
- * Update the foundational and global aspects of the page.
- */
- /* Prevent scroll on narrow devices */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow-x: hidden;
+/**
+    Knowhere
+*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd{
+    /* 清除边距 */
+    margin: 0;
+    padding: 0;
+    /* 字体设置 */
+    font-size: 18px;
+    font-family: 'Roboto', Helvetica, "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    color: #505050;
 }
 
-html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
+/*行内元素*/
+a,a:active,a:visited{
+    /*下划线和颜色*/
+    text-decoration: none;
+    /* Coca-Cola red*/
+    /* https://www.w3schools.com/colors/colors_brands.asp */
+    color: #ED1C16;
 }
 
-body {
-  color: #515151;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+a:hover{
+    color:#268bd2;
 }
 
-/*
- * Body resets
- *
- * Update the foundational and global aspects of the page.
- */
-
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+h1{ font-size: 2em; margin: .67em 0 }
+h2{ font-size: 1.5em; margin: .75em 0 }
+h3{ font-size: 1.17em; margin: .83em 0 }
+h5{ font-size: .83em; margin: 1.5em 0 }
+h6{ font-size: .75em; margin: 1.67em 0 }
+h1,h2,h3,h4,h5,h6{ font-weight: bolder }
 
 
-/* No `:visited` state is required by default (browsers will use `a`) */
-a {
-  color: #268bd2;
-  text-decoration: none;
-}
-a strong {
-  color: inherit;
-}
-/* `:focus` is linked to `:hover` for basic accessibility */
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  font-weight: bold;
-  line-height: 1.25;
-  color: #313131;
-  text-rendering: optimizeLegibility;
-}
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-}
-h4, h5, h6 {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-/* Body text */
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-strong {
-  color: #303030;
-}
-
-
-/* Lists */
-ul, ol, dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-bottom: .5rem;
-}
-
-/* Code */
-code,
-pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-}
-code {
-  padding: .25em .5em;
-  font-size: 85%;
-  color: #bf616a;
-  background-color: #f9f9f9;
-  border-radius: 3px;
-}
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: .8rem;
-  line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f9f9f9;
-}
-pre code {
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
-  background-color: transparent;
-}
-
-/* Misc */
-hr {
-  position: relative;
-  margin: 1.5rem 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
-}
-
-
-.wrapper {
-  overflow: hidden;
-  position: relative;
-}
-
+/* header */
 
 .header {
   padding: 25px 0;
   position: relative;
+  /* 屏蔽header阴影 */
   /*background: #f5f5f5;
   border-bottom: 1px solid #eaeaea;*/
 }
@@ -159,7 +46,6 @@ hr {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 15px;
-  font-family: 'Lato', sans-serif;
   text-align: right;
 }
 
@@ -218,66 +104,233 @@ hr {
   color: #000;
 }
 
-.date {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: #ccc;
-  font-size: 16px;
-}
-
-.archives-li {
-  list-style-type: none;
-  font-size: 18px;
-}
-
-.content {
+/* Contents */
+.container[role=main] {
   max-width: 800px;
-  margin: 60px auto 80px;
   padding: 0 15px;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #555;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333333;
 }
 
-.footer {
-  padding: 25px 0;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
+.archives {
+  margin: 20px auto;
 }
 
-.footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: #ccc;
-  font-size: 14px;
+.archives td {
+  border: none;
+  text-align: left;
 }
 
-.footer-links li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+.article {
+  text-align: justify;
 }
 
-.footer-links a {
-  color: #888;
-  text-decoration: none;
-  transition: color 150ms ease;
-  margin: 0 6px;
+.post-preview {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #eeeeee;
 }
 
-.footer-links a:hover,
-.footer-links a:focus {
-  color: #222;
+.post-preview a {
+  /*text-decoration: none;
+  color: #222222;*/
 }
 
-.footer-links li::before {
-  content: '/';
+.post-preview:last-child {
+  border-bottom: 0;
+}
+
+.postmeta {
+  margin: 10px 0;
+}
+
+.post-entry {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* readmore */
+.post-read-more {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 800;
+  float: right;
   position: relative;
-  left: -6px;
+  display: block;
+  text-decoration: none;
 }
 
-.footer-links li:first-child::before {
-  display: none;
+a.post-read-more::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .3s;
+}
+
+a.post-read-more:hover::after {
+  transform: scale(1, 1);
+}
+
+
+/* pagination */
+.pager {
+  list-style: none;
+  text-align: center;
+  margin:20px 0 0;
+  padding-left: 0;
+}
+
+.pager ul {
+  display: block;
+}
+
+.pager li {
+  display: inline;
+}
+
+.pager li a {
+  box-sizing: border-box;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 10px 5px;
+  background: #ffffff;
+  border-radius: 0;
+  border: 1px solid #dddddd;
+  display: inline-block;
+  color: #404040;
+  text-decoration: none;
+}
+
+.pager a:hover:not(.active) {
+  background-color: #dddddd;
+}
+
+.pager .previous > a {
+  float: left;
+  display: block;
+}
+
+.pager .next > a {
+  float: right;
+  display: block;
+}
+
+
+/* 代码块元素 */
+blockquote {
+  color: #808080;
+  padding: 0 10px;
+  border-left: 4px solid #aaaaaa;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+table {
+  padding: 0;
+  border-spacing: 0;
+}
+
+table tr {
+  border-top: 1px solid #dddddd;
+  margin: 0;
+  padding: 0;
+}
+
+table tr th {
+  font-weight: bold;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  text-align: left;
+  margin: 0;
+  padding: 6px 12px;
+}
+
+table tr th :first-child,
+table tr td :first-child {
+  margin-top: 0;
+}
+
+table tr th :last-child,
+table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.chroma .ln {
+  margin-right: 0.8em;
+  padding: 0 0.4em 0 0.4em;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.5 /* 1.42857143 */;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 3px solid #cccccc;
+    border-radius: 5px;
+}
+
+pre code {
+    padding: 0;
+    font-family: Menlo, Monaco, Consolas, monospace;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 100%;
+    color: #dd0011;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+footer {
+  padding: 60px 0;
+  text-align: center;
+  margin-top: auto;
+  font-size: 16px;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+@media (min-width: 600px) {
+  .container[role=main] {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 80px auto;
+  }
+
+  .pager li a {
+    padding: 10px 25px;
+  }
+
+  .pager.blog-pager  {
+    margin-top: 40px;
+  }
 }
