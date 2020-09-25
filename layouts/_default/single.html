@@ -3,7 +3,7 @@
     <article class="article" class="blog-post">
       <h1>{{ .Title }}</h1>
       {{ if eq .Section "posts" }}
-        <span class="date">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }}</span>
+        <span class="date">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }} | <a href="https://github.com/1nfsr/content/tree/post-hosting/{{.File}}">source</a></span>
       {{ end }}
 
       <div class="content">
@@ -12,15 +12,22 @@
 
       {{ if .Params.tags }}
         <div class="blog-tags">
+      <h2>tags</h2>
           {{ range .Params.tags }}
-            <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+            <li><a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;</li>
           {{ end }}
         </div>
       {{ end }}
 
+      <div>
+        {{ partial "paginationPost.html" . }}
+      </div>
+      <!-- 暂时没找到好解决办法先用br 下压评论框 -->
+      <br /><br />
       <div class="comment">
-        <h3>Comments</h3>
+        {{ partial "comments.html" }}
       </div>
     </article>
+
 </div>
 {{ end }}

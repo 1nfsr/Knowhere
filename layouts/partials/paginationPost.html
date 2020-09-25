@@ -1,0 +1,15 @@
+{{ if or ( .PrevInSection ) ( .NextInSection ) }}
+<ul class="pager">
+    {{ if .NextInSection }}
+    <li class="previous">
+        <a href="{{ .NextInSection.Permalink | relLangURL }}">{{ .NextInSection.Title }}</a>
+    </li>
+    {{ end }}
+
+    {{ if .PrevInSection }}
+    <li class="next">
+        <a href="{{ .PrevInSection.Permalink | relLangURL }}">{{ .PrevInSection.Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
