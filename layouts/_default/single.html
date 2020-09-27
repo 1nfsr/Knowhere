@@ -9,15 +9,11 @@
       <div class="content">
         {{ .Content }}
       </div>
-
-      {{ if .Params.tags }}
-        <div class="blog-tags">
-      <h2>tags</h2>
-          {{ range .Params.tags }}
-            <li><a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;</li>
-          {{ end }}
-        </div>
-      {{ end }}
+      
+      <div>
+        {{ partial "post-ext.html" . }}
+      </div>
+    
 
       <div>
         {{ partial "paginationPost.html" . }}

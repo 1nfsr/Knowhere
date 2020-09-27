@@ -1,0 +1,13 @@
+{{ if .Params.tags }} 
+    <h2>tags</h2>
+    {{ range .Params.tags }}
+        <li><a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a></li>
+    {{ end }}
+{{ end }}
+
+{{ if .Params.categories }}
+    <h2>Categories</h2>
+    {{ range .Params.categories }}
+        <li><a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/">{{ . }}</a></li>
+    {{ end }}
+{{ end }}

@@ -232,92 +232,91 @@ a.post-read-more:hover::after {
   display: block;
 }
 
-
-/* 代码块元素 */
-blockquote {
-  color: #808080;
-  padding: 0 10px;
-  border-left: 4px solid #aaaaaa;
+/* Code */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
 }
-
-blockquote p:first-child {
+code {
+  padding: .25em .5em;
+  font-size: 17px;
+  font-weight: bolder;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
   margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
 }
-
-table {
+pre code {
   padding: 0;
-  border-spacing: 0;
+  font-size: 17px;
+  color: inherit;
+  background-color: transparent;
 }
 
-table tr {
-  border-top: 1px solid #dddddd;
-  margin: 0;
-  padding: 0;
-}
 
-table tr th {
-  font-weight: bold;
-  background-color: #eeeeee;
-  border: 1px solid #dddddd;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
+/* Pygments via Jekyll */
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
-
-table tr td {
-  border: 1px solid #dddddd;
-  background-color: #ffffff;
-  text-align: left;
-  margin: 0;
-  padding: 6px 12px;
-}
-
-table tr th :first-child,
-table tr td :first-child {
-  margin-top: 0;
-}
-
-table tr th :last-child,
-table tr td :last-child {
+.highlight pre {
   margin-bottom: 0;
 }
 
-.chroma .ln {
-  margin-right: 0.8em;
-  padding: 0 0.4em 0 0.4em;
+/* Gist via GitHub Pages */
+.gist .gist-file {
+  font-family: Menlo, Monaco, "Courier New", monospace !important;
+}
+.gist .markdown-body {
+  padding: 15px;
+}
+.gist pre {
+  padding: 0;
+  background-color: transparent;
+}
+.gist .gist-file .gist-data {
+  font-size: .8rem !important;
+  line-height: 1.4;
+}
+.gist code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
 }
 
-pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 16px;
-    line-height: 1.5 /* 1.42857143 */;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 3px solid #cccccc;
-    border-radius: 5px;
+/* Tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
 }
 
-pre code {
-    padding: 0;
-    font-family: Menlo, Monaco, Consolas, monospace;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-}
 
-code {
-    padding: 2px 4px;
-    font-size: 100%;
-    color: #dd0011;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-}
+
+
 
 footer {
   padding: 60px 0;
