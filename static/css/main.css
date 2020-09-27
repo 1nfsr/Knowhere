@@ -126,6 +126,10 @@ h1,h2,h3,h4,h5,h6{ font-weight: bolder }
   text-align: justify;
 }
 
+.post-title {
+  margin-bottom: 0;
+}
+
 .post-preview {
   padding-bottom: 35px;
   border-bottom: 1px solid #eeeeee;
@@ -142,6 +146,10 @@ h1,h2,h3,h4,h5,h6{ font-weight: bolder }
 
 .postmeta {
   margin: 10px 0;
+  color: #808080;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0 0 10px;
 }
 
 .post-entry {
