@@ -3,7 +3,7 @@
     <article class="article" class="blog-post">
       <h1 class="post-title">{{ .Title }}</h1>
       {{ if eq .Section "posts" }}
-        {{ partial "postmeta.html" }}
+        <div class="postmeta">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }} | <a href="https://github.com/1nfsr/content/tree/post-hosting/{{.File}}">source</a></div>
       {{ end }}
 
       <div class="content">
