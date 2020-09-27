@@ -1,1 +1,5 @@
-<div class="postmeta">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }} | <a href="https://github.com/1nfsr/content/tree/post-hosting/{{.File}}">source</a></div>
+<div class="postmeta">Posted by <a href="{{if .Params.author_url }}{{ .Params.author_url }}{{ else }}{{ .Site.Params.author.url }}{{ end }}">{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author.name }}{{ end }}</a> @ {{ .Date.Format "2006-01-06" }}
+{{- if .Site.Params.post_contents.enable -}} 
+    &nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{ .Site.Params.post_contents.url }}{{.File}}">source</a>
+{{- end }}
+</div>
