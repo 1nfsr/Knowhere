@@ -1,24 +1,6 @@
-<!--<h1 style="text-align:center">Comments</h1>-->
-<!-- valine -->
-{{- if .Site.Params.valine.enable -}}
-<!-- id 将作为查询条件 -->
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: '{{ .Site.Params.valine.appId }}',
-        appKey: '{{ .Site.Params.valine.appKey }}',
-        notify: {{ .Site.Params.valine.notify }}, 
-        verify: {{ .Site.Params.valine.verify }}, 
-        avatar:'{{ .Site.Params.valine.avatar }}', 
-        placeholder: '{{ .Site.Params.valine.placeholder }}',
-        visitor: {{ .Site.Params.valine.visitor }},
-        // 设置Bilibili表情包地址
-        emojiCDN: '{{ .Site.BaseURL }}emote/', 
-        // 表情title和图片映射
-        emojiMaps: {
+import wget
+
+a = {
         "微笑": "bf3ea8541e1bd469255a907f7b60015ad9abf1ce.png",
         "嫌弃": "de4c0783aaa60ec03de0a2b90858927bfad7154b.png",
         "喜欢": "8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png",
@@ -61,8 +43,8 @@
         "画风突变": "ba4de7a3f97644038b15195bdc9f82a8fd118e77.png",
         "秒啊": "b4cb77159d58614a9b787b91b1cd22a81f383535.png",
         "狗头": "bba7c12aa51fed0199c241465560dfc2714c593e.png",
-        // ... 更多表情
-    } 
-    });
-</script>
-{{- end }}
+    }
+
+for value in a.values():
+    url = 'https://i0.hdslb.com/bfs/emote/' + value
+    wget.download(url)
