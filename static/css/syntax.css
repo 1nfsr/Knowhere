@@ -73,9 +73,10 @@ Based on Jesse Leite's Atom syntax theme 'An Old Hope' – https://github.com/Je
 {
   display: block;
   overflow-x: auto;
-  background: #3f3f3f;
+  /*background: #3f3f3f;*/
+  background: #ffffff;
   color: #c0c5ce;
-  padding: 0.6em;
+  padding: 0.5em;
 }
 
 .hljs-emphasis 
