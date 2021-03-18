@@ -1,16 +1,13 @@
 {{ define "main" }}
-<div class="container" role="main">
-    <div class="posts-list">
-      {{ if .IsHome }}
-        {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-      {{ else }}
-        {{ $pag := .Paginator.Pages }}
-      {{ end }}
 
-      {{ range .Paginator.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
-    </div>
-    {{ partial "pagination.html" . }}
-</div>
+{{ if .IsHome }}
+	{{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{ else }}
+    {{ $pag := .Paginator.Pages }}
+{{ end }}
+
+{{ range .Paginator.Pages }}
+    {{ .Render "summery" }}
+{{ end }}
+
 {{ end }}

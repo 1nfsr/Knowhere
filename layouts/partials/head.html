@@ -1,28 +1,12 @@
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="content-language" content="{{ .Site.Params.content_language }}" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="applicable-device" content="pc,mobile">
-    <meta name="description" content="{{ .Site.Params.description }}" />
-    <meta name="author" content="{{ .Site.Params.author.name }}" />
-    <meta name="keywords" content="{{ .Site.Params.keywords }}" />
-  
-    {{ define "title" }}
-    {{ $title := .Title }}
-    {{ if and (ne $title "") (ne $title .Site.Title) }}
-    <title>{{ $title }} &ndash; {{ .Site.Title | htmlUnescape }}</title>
-    {{ else }}
-    {{ $subscription := .Site.Params.subscription }}
-    <title>{{ .Site.Title | htmlUnescape }}{{ if and (isset .Site.Params "subscription") (ne $subscription "") }} &ndash; {{ $subscription | htmlUnescape }}{{ end }}</title>
-    {{ end }}  
-    {{ end }}
-    {{- block "title" . }}{{- end }}
-    <!-- Stylesheets -->
-    <link rel="icon" href="{{ .Site.BaseURL }}/icon/favicon.ico" />
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/syntax.css" />
-    {{ if or .Site.Params.google_Analytics }}
-        {{ partial "analytics.html" . }}
-    {{ end }}
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/min.css" />
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/syntax.css" />
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+	<script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>

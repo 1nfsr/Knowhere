@@ -1,16 +1,6 @@
-<header class="header">
-  <nav class="nav">
-    <a href="{{ .Site.BaseURL }}" class="nav-avatar">
-      <img class="avatar" src="{{ .Site.BaseURL }}/avatar/{{ .Site.Params.avatar.url }}" 
-      width="{{ .Site.Params.avatar.width }}" 
-      height="{{ .Site.Params.avatar.height }}" 
-      alt="{{ .Site.Params.author.name }}">
-    </a>
-
-    <ul class="nav-links">
-    {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-    {{ end }}
-    </ul>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .Title }}</title>
+</head>
+<body>
