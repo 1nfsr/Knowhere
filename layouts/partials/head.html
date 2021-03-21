@@ -1,23 +1,7 @@
 <head>
-	{{ define "title" }}
-    {{ $title := .Title }}
-    {{ if and (ne $title "") (ne $title .Site.Title) }}
-    <title>{{ $title }} &ndash; {{ .Site.Title | htmlUnescape }}</title>
-    {{ else }}
-    {{ $subscription := .Site.Params.subscription }}
-    <title>{{ .Site.Title | htmlUnescape }}{{ if and (isset .Site.Params "subscription") (ne $subscription "") }} &ndash; {{ $subscription | htmlUnescape }}{{ end }}</title>
-    {{ end }}  
-    {{ end }}
-    {{- block "title" . }}{{- end }}
-    
-	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/min.css" />
-	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/syntax.css" />
-	
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
-	<script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/basic.css" />
+	<title>Document</title>
 </head>
