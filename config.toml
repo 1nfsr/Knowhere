@@ -1,0 +1,32 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Knowhere"
+theme = "Knowhere"
+
+[Params]
+    mainSections = ["post","posts"]
+    CustomCSS = ["css/syntax.css"]
+    CustomJS = ["js/custom.js"]
+
+[[menu.main]]
+    name = "about"
+    url = "/about"
+    weight = 1
+
+[[menu.main]]
+    name = "git"
+    url = "https://github.com"
+    weight = 2
+
+[markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
+    noClasses = false
+#    style = "github"
+#pygmentsUseClasses = true
+#pygentscodeFences = true
