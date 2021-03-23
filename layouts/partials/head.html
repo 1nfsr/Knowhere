@@ -10,5 +10,5 @@
 	{{ range .Site.Params.CustomJS -}}
 	<script type="text/javascript" src="{{ . | absURL }}"></script>
 	{{- end }}
-	<title>Document</title>
+	<title>{{ .Site.Title }}</title>
 </head>

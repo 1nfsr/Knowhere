@@ -13,11 +13,6 @@ theme = "Knowhere"
     url = "/about"
     weight = 1
 
-[[menu.main]]
-    name = "git"
-    url = "https://github.com"
-    weight = 2
-
 [markup.highlight]
     codeFences = true
     guessSyntax = true
