@@ -1,0 +1,81 @@
+# hugo config
+baseURL = "https://infsr.me"
+languageCode = "en-US"
+title = "Infsr"
+theme = "C"
+enableEmoji = "true"
+DefaultContentLanguage = "en"
+enableRobotsTXT = "true"
+disableHugoGeneratorInject = "true"
+enableInlineShortcodes = true
+uglyURLs = "true"
+canonifyurls = "true"
+
+
+[Params]
+  mainSections = ["posts", "post"]
+  content_language = "zh-CN"
+  Description = "Knowhere主题 hugo"
+  Keywords = "Infsr的博客,个人生活记录,技术博客"
+  subscription = "I am a slow walker , but I never walk backwards ."
+  google_Analytics = "UA-142034632-1"
+
+[Params.avatar]
+  url = "avatar.jpg"
+  width = "50"
+  height = "50"
+  alt = "avatar"
+
+[Params.author]
+  name = "Infsr"
+  url = "https://infsr.me"
+
+[Params.post_contents]
+  enable = true
+  url = "https://github.com/1nfsr/content/tree/post-hosting/"
+  old_url = ""
+
+[Params.twikoo]
+  enable = true
+  envId = 'comments-8gajekok4e4fa1cf'
+
+#[Params.valine]
+#  enable = true
+#  appId = 'ILDEgt8zPn88E4cE9tn9a8J2-MdYXbMMI'
+#  appKey = '2fRCr2r40FqwR1tUSWRxgcbN'
+#  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+#  verify = false # Verification code
+#  avatar = 'mm' 
+#  placeholder = '说点什么吧...'
+#  visitor = true
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Archives"
+    url = "/archives"
+    weight = 2
+
+[[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    style = "github"
+
+[permalinks]
+  posts = "/:year/:month/:filename/"
+  page = "/:filename/"
+
+[outputs]
+    section = ["JSON", "HTML"]
+
+[outputFormats]
+[outputFormats.RSS]
+  mediatype = "application/rss"
+  baseName = "rss"
