@@ -8,7 +8,7 @@ description = ""
 homepage = "https://infsr.me/"
 tags = ["blog", "minimal"]
 features = ["minimal"]
-min_version = "0.59.1"
+min_version = "0.54.0"
 
 [author]
   name = "Infsr"
